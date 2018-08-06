@@ -1,4 +1,3 @@
-/* Steve assignment 1 - hexdump */
 #include <fcntl.h>
 #include <stdio.h>
 #include <sys/stat.h>
