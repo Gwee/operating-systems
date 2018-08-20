@@ -7,11 +7,13 @@
 #include "unistd.h"
 #include <string.h>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wmissing-noreturn"
 int main() {
 char command[1024];
 char *token;
 char *outfile;
-int i, fd, amper, redirect, retid, status;
+int i, fd, amper, redirect, retid, status, input_redirect, append, cd, quit;
 char *argv1[10];
 
 while (1)
@@ -37,7 +39,8 @@ while (1)
 //    printf("\"%s\"\n", argv1[i]);
 //exit(0);
 
-    /* Does command line end with & */ 
+    /* Does command line end with & */
+    //if (argv1[0] )
     if (argv1[0] && ! strcmp(argv1[i - 1], "&")) {
         amper = 1;
         argv1[i - 1] = NULL;
@@ -45,6 +48,23 @@ while (1)
     else 
         amper = 0; 
 //printf("\"%d\"\n", amper);
+
+    if (argv1[0] && ! strcmp(argv1[i - 2], ">") && ! strcmp(argv1[i-3],">")) {
+        append= 1;
+        argv1[i - 2] = NULL;
+        argv1[i - 3] = NULL;
+        outfile = argv1[i - 1];
+    }
+    else
+        input_redirect = 0;
+
+    if (argv1[0] && ! strcmp(argv1[i - 2], "<")) {
+        input_redirect= 1;
+        argv1[i - 2] = NULL;
+        outfile = argv1[i - 1];
+    }
+    else
+        input_redirect = 0;
 
     if (argv1[0] && ! strcmp(argv1[i - 2], ">")) {
         redirect = 1;
