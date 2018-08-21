@@ -12,27 +12,10 @@
 int main() {
 char command[1024];
 char *token;
-char *outfile;
+char *outfile, *infile;
 int i, fd, amper, redirect, retid, status, input_redirect, append, cd, quit;
 char *argv1[10];
-void check_redirect (char * input){
-    
-    switch (input)
-    {
-        case '>':
-            /* code */
-            break;
-        case '<':
-            /* code */
-            break;
-        case '>>':
-            /* code */
-            break;
-    
-        default:
-            break;
-    }
-}
+
 while (1)
 {
     printf("hello: ");
@@ -79,7 +62,7 @@ while (1)
     if (argv1[0] && ! strcmp(argv1[i - 2], "<")) {
         input_redirect= 1;
         argv1[i - 2] = NULL;
-        outfile = argv1[i - 1];
+        infile = argv1[i - 1];
     }
     else
         input_redirect = 0;
@@ -96,6 +79,12 @@ while (1)
 
     if (fork() == 0) { 
         /* redirection of IO ? */
+        if (input_redirect){
+            fd = open(infile, O_RDONLY);
+            close (STDIN_FILENO) ;
+            dup(fd);
+            close(fd);
+        }
         if (redirect) {
             fd = creat(outfile, 0660); 
             close (STDOUT_FILENO) ; 
