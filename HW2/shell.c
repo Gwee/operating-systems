@@ -15,7 +15,24 @@ char *token;
 char *outfile;
 int i, fd, amper, redirect, retid, status, input_redirect, append, cd, quit;
 char *argv1[10];
-
+void check_redirect (char * input){
+    
+    switch (input)
+    {
+        case '>':
+            /* code */
+            break;
+        case '<':
+            /* code */
+            break;
+        case '>>':
+            /* code */
+            break;
+    
+        default:
+            break;
+    }
+}
 while (1)
 {
     printf("hello: ");
