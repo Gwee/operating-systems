@@ -49,11 +49,12 @@ while (1)
         amper = 0; 
 //printf("\"%d\"\n", amper);
 
-    if (argv1[0] && ! strcmp(argv1[i - 2], ">") && ! strcmp(argv1[i-3],">")) {
+    if (argv1[0] && ! strcmp(argv1[i - 2], ">>")) {
         append= 1;
         argv1[i - 2] = NULL;
         argv1[i - 3] = NULL;
         outfile = argv1[i - 1];
+        printf("append\n");
     }
     else
         input_redirect = 0;
