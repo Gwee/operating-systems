@@ -1,0 +1,43 @@
+Targil3 Threads
+---------------
+
+Write a program where a master thread produces a series of queued jobs.
+The jobs are processed by several concurrent threads.
+The queue of jobs is represented by a linked list of struct job objects.
+After each thread finishes an operation,
+   it checks the queue to see if an additional job is available.
+If job_queue is non-null, the thread removes the head of the linked list,
+   and sets job_queue to the next job on the list.
+the queue is protected by a mutex.
+Before accessing the queue (either for read or write), each thread locks a mutex first.
+Only when the entire sequence of checking the queue and
+adding or removing a job is complete is the mutex unlocked.
+Use a semaphore to count the number of jobs waiting in the queue,
+and block the threads when the queue empties until new jobs become available.
+
+The jobs that the master produces are lines of text that the workers have to print.
+The lines are read from "poem.txt".
+The master tells the workers that all jobs are done by a job that has a line "END".
+It waits for the workers and prints "Finished!".
+
+See code snippets in file "threads.txt".
+fopen, fclose, fgets can be used for reading from file and sprintf for writing to string.
+----------------------------
+Outline of program:
+
+thread_function () {
+. . .
+}
+
+main () {
+initialize_job_queue
+create threads
+While lines in poem.txt
+   enqueue_job
+enqueue "END"
+join threads
+free "END"
+print "Finished!"
+----------------------------
+
+Submit the program and the output.

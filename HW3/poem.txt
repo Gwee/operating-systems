@@ -1,0 +1,28 @@
+     1	All the world's a stage,
+     2	And all the men and women merely players;
+     3	They have their exits and their entrances,
+     4	And one man in his time plays many parts,
+     5	His acts being seven ages. At first, the infant,
+     6	Mewling and puking in the nurse's arms.
+     7	Then the whining schoolboy, with his satchel
+     8	And shining morning face, creeping like snail
+     9	Unwillingly to school. And then the lover,
+    10	Sighing like furnace, with a woeful ballad
+    11	Made to his mistress' eyebrow. Then a soldier,
+    12	Full of strange oaths and bearded like the pard,
+    13	Jealous in honor, sudden and quick in quarrel,
+    14	Seeking the bubble reputation
+    15	Even in the cannon's mouth. And then the justice,
+    16	In fair round belly with good capon lined,
+    17	With eyes severe and beard of formal cut,
+    18	Full of wise saws and modern instances;
+    19	And so he plays his part. The sixth age shifts
+    20	Into the lean and slippered pantaloon,
+    21	With spectacles on nose and pouch on side;
+    22	His youthful hose, well saved, a world too wide
+    23	For his shrunk shank, and his big manly voice,
+    24	Turning again toward childish treble, pipes
+    25	And whistles in his sound. Last scene of all,
+    26	That ends this strange eventful history,
+    27	Is second childishness and mere oblivion,
+    28	Sans teeth, sans eyes, sans taste, sans everything.
